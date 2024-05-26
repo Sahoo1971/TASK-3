@@ -28,14 +28,17 @@ header {
 
 header h1 {
     font-size: 24px;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 nav ul {
     list-style-type: none;
+    display: inline-block;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     position: relative;
     margin-right: 20px;
 }
@@ -53,14 +56,15 @@ nav ul li .dropdown {
     left: 0;
     background-color: #444;
     list-style-type: none;
-}
-
-nav ul li .dropdown li {
-    display: block;
-    margin: 0;
+    padding: 10px 0;
+    min-width: 150px;
 }
 
 nav ul li:hover .dropdown {
+    display: block;
+}
+
+nav ul li .dropdown li {
     display: block;
 }
 
@@ -106,6 +110,16 @@ h2 {
     margin-bottom: 20px;
 }
 
+#search {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .products {
     display: flex;
     justify-content: center;
@@ -121,6 +135,11 @@ h2 {
     text-align: center;
     margin: 0 20px 20px 0;
     width: calc(33.333% - 20px);
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-10px);
 }
 
 .product img {
@@ -220,7 +239,7 @@ footer {
     font-weight: bold;
 }
 
-.close:hover,
+close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
@@ -252,5 +271,33 @@ footer {
     }
     .modal-content {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .banner {
+        padding: 40px 0;
+    }
+    .banner h2 {
+        font-size: 24px;
+    }
+    .banner p {
+        font-size: 16px;
+    }
+    .product {
+        width: 100%;
     }
 }

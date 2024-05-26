@@ -1,27 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Sample product data
     const products = [
         {
             name: 'Smartphone',
             price: '₹20,000',
             image: 'product1.jpg',
-            description: 'A high-quality smartphone with all the latest features.',
+            description: 'A high-end smartphone with excellent features.',
         },
         {
             name: 'Laptop',
             price: '₹50,000',
-            image: 'product.jpg',
-            description: 'A powerful laptop perfect for work and play.',
+            image: 'product2.jpg',
+            description: 'A powerful laptop for all your computing needs.',
         },
         {
-            name: 'Smart TV',
-            price: '₹40,000',
+            name: 'Television',
+            price: '₹30,000',
             image: 'product3.jpg',
-            description: 'A smart TV with stunning visuals and smart features.',
+            description: 'A large screen television with stunning picture quality.',
         },
     ];
 
-    // Render products
     const productContainer = document.querySelector('.products');
     products.forEach(product => {
         const productDiv = document.createElement('div');
@@ -95,4 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(String(email).toLowerCase());
     }
+
+    // Search functionality
+    document.getElementById('search').addEventListener('input', (event) => {
+        const searchQuery = event.target.value.toLowerCase();
+        document.querySelectorAll('.product').forEach(product => {
+            const name = product.querySelector('h3').textContent.toLowerCase();
+            product.style.display = name.includes(searchQuery) ? 'block' : 'none';
+        });
+    });
 });
