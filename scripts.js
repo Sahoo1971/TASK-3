@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'Laptop',
             price: '₹50,000',
-            image: 'product2.jpg',
+            image: 'product.jpg',
             description: 'A powerful laptop for all your computing needs.',
         },
         {
